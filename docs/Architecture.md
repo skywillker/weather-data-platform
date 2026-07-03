@@ -1,13 +1,14 @@
-                  Configuration
-             (src/config/settings.py)
-                       │
-                       ▼
-             Ingestion Layer
-      (src/ingestion/weather_api.py)
-                       │
-                       ▼
-                Open-Meteo API
-                       │
-                       ▼
-              Raw Data Storage
-                (data/raw/*.json)
+                    Configuration Layer
+        ┌────────────────────┴────────────────────┐
+        ▼                                         ▼
+ settings.py                           logging_config.py
+        │                                         │
+        └────────────────────┬────────────────────┘
+                             ▼
+                    weather_api.py
+                    ┌────────┴────────┐
+                    ▼                 ▼
+            Open-Meteo API      Logging System
+                    │           ┌──────┴──────┐
+                    ▼           ▼             ▼
+           data/raw/*.json  Console      logs/*.log

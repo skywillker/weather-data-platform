@@ -14,3 +14,6 @@ Thumbs.db
 
 # Generated data
 data/raw/*.json
+
+# Logs
+logs/

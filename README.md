@@ -1,7 +1,7 @@
 # Weather Data Platform
 
 ## Project Status
-🟢 Current Version: Sprint 2A completed
+🟢 Current Version: Sprint 2B completed
 
 The project is being developed incrementally through planned sprints.
 
@@ -17,9 +17,12 @@ This project was created to demonstrate an incremental construction of a data pl
 
 ## Current Features
 
-- Retrieve weather data from the Open-Meteo API
-- Store raw responses as JSON files
-- Organize the project using a modular Python structure
+- Retrieve weather data from the Open-Meteo API.
+- Store raw responses as timestamped JSON files.
+- Centralized application configuration.
+- Structured logging.
+- Console and file logging.
+- Modular project organization.
 
 ## Architecture 
 

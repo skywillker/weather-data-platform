@@ -1,14 +1,13 @@
-v0.1.1
+## v0.1.2 (era v0.1.1)
 
-Added
+### Added
 
-- Configuration module (`src/config/settings.py`)
-- Centralized API request parameters
-- Request timeout configuration
-- Package structure using `__init__.py`
-- Module execution with `python -m`
+- Centralized logging configuration.
+- Console logging.
+- File logging.
+- Standard log formatter.
+- Shared logger for project modules.
 
-Changed
+### Changed
 
-- Refactored weather ingestion to use `requests.get(..., params=...)`
-- Removed hardcoded API URL construction
+- Replaced print statements with logging.
