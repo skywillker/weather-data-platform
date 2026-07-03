@@ -1,7 +1,7 @@
 # Weather Data Platform
 
 ## Project Status
-🟢 Current Version: Sprint 1 completed
+🟢 Current Version: Sprint 2A completed
 
 The project is being developed incrementally through planned sprints.
 
@@ -46,7 +46,7 @@ pip install -r requirements.txt
 3. Run the ingestion script
 
 ```bash
-python src/ingestion/weather_api.py
+python -m src.ingestion.weather_api
 ```
 
 ## Documentation

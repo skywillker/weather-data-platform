@@ -2,16 +2,22 @@ from pathlib import Path
 import requests
 import json
 from datetime import datetime
+from src.config.settings import (
+    API_BASE_URL,
+    API_PARAMS,
+    REQUEST_TIMEOUT,
+)
 
-
-API_URL = "https://api.open-meteo.com/v1/forecast?latitude=-23.5750&longitude=-46.5700&current=temperature_2m,wind_speed_10m"
 
 def fetch_weather():
     """
     Fetch current weather data from Open-Meteo API.
     """
-    response = requests.get(API_URL)
-
+    response = requests.get(
+        API_BASE_URL,
+        params=API_PARAMS,
+        timeout=REQUEST_TIMEOUT,
+)
     response.raise_for_status()
 
     return response.json()
