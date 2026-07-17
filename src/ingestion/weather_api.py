@@ -34,9 +34,18 @@ def fetch_weather():
 def save_json(data):
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-    base_dir = Path(__file__).resolve().parents[2]
+    project_root = Path(__file__).resolve().parents[2]
 
-    output_file = base_dir / "data" / "raw" / f"weather_vp_{timestamp}.json"
+    data_dir = project_root / "data"
+
+    raw_dir = data_dir / "raw"
+
+    raw_dir.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    output_file = raw_dir / f"weather_vp_{timestamp}.json"
 
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
