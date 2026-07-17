@@ -1,13 +1,11 @@
-## v0.1.2 (era v0.1.1)
+## v0.1.3
 
 ### Added
 
-- Centralized logging configuration.
-- Console logging.
-- File logging.
-- Standard log formatter.
-- Shared logger for project modules.
+- Dockerfile for containerized execution.
+- .dockerignore.
+- Docker-based project execution instructions.
 
 ### Changed
 
-- Replaced print statements with logging.
+- Automatically create the output directory before saving JSON files.

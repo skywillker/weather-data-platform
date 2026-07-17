@@ -1,7 +1,7 @@
 # Weather Data Platform
 
 ## Project Status
-🟢 Current Version: Sprint 2B completed
+🟢 Current Version: Sprint 3 completed
 
 The project is being developed incrementally through planned sprints.
 
@@ -22,6 +22,7 @@ This project was created to demonstrate an incremental construction of a data pl
 - Centralized application configuration.
 - Structured logging.
 - Console and file logging.
+- Dockerized application for reproducible execution.
 - Modular project organization.
 
 ## Architecture 
@@ -38,18 +39,19 @@ JSON Files
 
 ## Getting Started
 
-1. Clone the repository
+1. Clone the repository.
 
-2. Install the dependencies
+2. Build the Docker image.
 
 ```bash
-pip install -r requirements.txt
+docker build -t weather-data-platform .
 ```
 
-3. Run the ingestion script
-
+3. Run the container. 
 ```bash
-python -m src.ingestion.weather_api
+docker run --rm \
+-v "$(pwd)/data:/app/data" \
+weather-data-platform
 ```
 
 ## Documentation
