@@ -1,13 +1,11 @@
-from pathlib import Path
 import requests
-import json
-from datetime import datetime
 from src.config.settings import (
     API_BASE_URL,
     API_PARAMS,
     REQUEST_TIMEOUT,
 )
 from src.config.logging_config import logger
+from src.storage.bronze import save
 
 def fetch_weather():
     """
@@ -31,29 +29,14 @@ def fetch_weather():
     return response.json()
 
 
-def save_json(data):
-    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-
-    project_root = Path(__file__).resolve().parents[2]
-
-    data_dir = project_root / "data"
-
-    raw_dir = data_dir / "raw"
-
-    raw_dir.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
-    output_file = raw_dir / f"weather_vp_{timestamp}.json"
-
-    with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
-
-    logger.info("Data saved in: %s", output_file)
-    logger.info("Ingestion completed.")
-
-
 if __name__ == "__main__":
     data = fetch_weather()
-    save_json(data)
+
+    save(
+        domain="weather",
+        dataset="current_weather",
+        source="open_meteo",
+        data=data,
+    )
+
+    logger.info("Ingestion completed.")
