@@ -1,11 +1,11 @@
-## v0.1.3
+## v0.1.4
 
 ### Added
 
-- Dockerfile for containerized execution.
-- .dockerignore.
-- Docker-based project execution instructions.
+- Bronze script for persistence in the Bronze Layer.
+- Bronze Layer contract.
+- Medallion-based architecture for execution instructions.
 
 ### Changed
 
-- Automatically create the output directory before saving JSON files.
+- Refactored persistence to the Bronze Layer following the Medallion Architecture.

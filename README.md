@@ -1,7 +1,7 @@
 # Weather Data Platform
 
 ## Project Status
-🟢 Current Version: Sprint 3 completed
+🟢 Current Version: Sprint 4 completed
 
 The project is being developed incrementally through planned sprints.
 
@@ -24,6 +24,7 @@ This project was created to demonstrate an incremental construction of a data pl
 - Console and file logging.
 - Dockerized application for reproducible execution.
 - Modular project organization.
+- Medallion Architecture started, with the Bronze Layer and its contract. 
 
 ## Architecture 
 
@@ -31,10 +32,13 @@ This project was created to demonstrate an incremental construction of a data pl
 Open-Meteo API
         │
         ▼
-Python Ingestion Script
+Ingestion Layer
         │
         ▼
-JSON Files
+Bronze Layer
+        │
+        ▼
+JSON Files (Envelope Pattern)
 ```
 
 ## Getting Started
@@ -62,6 +66,7 @@ Additional documentation is available in the `docs/` directory:
 - Roadmap
 - Changelog
 - Architecture Decision Records (ADRs)
+- Contracts
 
 ## Cost
 

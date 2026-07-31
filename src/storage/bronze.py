@@ -38,9 +38,20 @@ def save(
 
     output_file = output_dir / filename
 
+    envelope = {
+        "metadata": {
+            "ingestion_timestamp": timestamp.isoformat(),
+            "domain": domain,
+            "dataset": dataset,
+            "source": source,
+        },
+        "payload": data,
+    }
+
+
     with open(output_file, "w", encoding="utf-8") as file:
         json.dump(
-            data,
+            envelope,
             file,
             indent=4,
             ensure_ascii=False,

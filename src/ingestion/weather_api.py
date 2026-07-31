@@ -28,8 +28,7 @@ def fetch_weather():
 
     return response.json()
 
-
-if __name__ == "__main__":
+def main():
     data = fetch_weather()
 
     save(
@@ -40,3 +39,6 @@ if __name__ == "__main__":
     )
 
     logger.info("Ingestion completed.")
+
+if __name__ == "__main__":
+    main()
