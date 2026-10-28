@@ -1,7 +1,7 @@
 # Weather Data Platform
 
 ## Project Status
-🟢 Current Version: Sprint 4 completed
+🟢 Current Version: Sprint 5 completed
 
 The project is being developed incrementally through planned sprints.
 
@@ -24,7 +24,14 @@ This project was created to demonstrate an incremental construction of a data pl
 - Console and file logging.
 - Dockerized application for reproducible execution.
 - Modular project organization.
-- Medallion Architecture started, with the Bronze Layer and its contract. 
+- Medallion Architecture started, with the Bronze and Silver Layers and their contract. 
+
+## Current Limitations
+
+- The Silver pipeline currently reads a specific Bronze date partition rather than processing the entire available Bronze history.
+- Automated regression tests for Silver transformations and data-quality rules have not yet been implemented.
+
+These limitations are intentional at the current development stage and will be addressed incrementally in upcoming sprints.
 
 ## Architecture 
 
@@ -38,7 +45,10 @@ Ingestion Layer
 Bronze Layer
         │
         ▼
-JSON Files (Envelope Pattern)
+Silver Layer
+        │
+        ▼
+Partitioned Parquet Dataset
 ```
 
 ## Getting Started

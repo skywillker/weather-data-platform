@@ -1,6 +1,12 @@
 # Use the official slim image to reduce image size without affecting our application.
 FROM python:3.13-slim
 
+# Install Java runtime required by Apache Spark.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        openjdk-21-jre-headless \
+    && rm -rf /var/lib/apt/lists/*
+
 # Defines the work directory inside the container
 WORKDIR /app
 
